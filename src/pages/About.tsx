@@ -20,18 +20,18 @@ import {
 
 /* ─── Data ─────────────────────────────────────────────── */
 
-const timeline = [
-  {
-    year: "2020",
-    title: "iTechs Was Founded",
-    desc: "iTechs Was Founded to bridge the gap between cutting-edge global technology and the complex on-the-ground realities of high-stakes regional projects.",
-  },
-  {
-    year: "2023",
-    title: "Regional expansion",
-    desc: "With a proven track record in Egypt, iTechs began expanding its operations across the MENA region, establishing a presence in key markets to serve a growing international client base.",
-  },
-];
+// const timeline = [
+//   {
+//     year: "2020",
+//     title: "iTechs Was Founded",
+//     desc: "iTechs Was Founded to bridge the gap between cutting-edge global technology and the complex on-the-ground realities of high-stakes regional projects.",
+//   },
+//   {
+//     year: "2023",
+//     title: "Regional expansion",
+//     desc: "With a proven track record in Egypt, iTechs began expanding its operations across the MENA region, establishing a presence in key markets to serve a growing international client base.",
+//   },
+// ];
 
 const values = [
   {
