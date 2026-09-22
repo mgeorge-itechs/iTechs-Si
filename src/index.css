@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* iTechs Group Design System — Dark Corporate Tech */
+    --background: 217 40% 6%;
+    --foreground: 210 30% 94%;
+
+    --card: 217 38% 9%;
+    --card-foreground: 210 30% 94%;
+
+    --popover: 217 38% 9%;
+    --popover-foreground: 210 30% 94%;
+
+    /* Primary — Brand Navy #1E3F74 */
+    --primary: 217 59% 29%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary — Teal/Cyan #17A2B8 */
+    --secondary: 217 35% 14%;
+    --secondary-foreground: 210 30% 85%;
+
+    --muted: 217 30% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    /* Accent — Gold / Amber */
+    --accent: 42 90% 52%;
+    --accent-foreground: 217 59% 10%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 30% 17%;
+    --input: 217 30% 17%;
+    --ring: 188 78% 41%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --gold: 42 90% 52%;
+    --gold-dim: 42 70% 38%;
+    --navy-deep: 217 40% 6%;
+    --navy-mid: 217 38% 9%;
+    --navy-surface: 217 35% 14%;
+    --electric: 188 78% 41%;
+    --electric-glow: 188 78% 58%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(217 40% 5%) 0%,
+      hsl(217 45% 9%) 50%,
+      hsl(217 50% 12%) 100%
+    );
+    --gradient-gold: linear-gradient(135deg, hsl(42 90% 52%), hsl(35 90% 45%));
+    --gradient-blue: linear-gradient(
+      135deg,
+      hsl(188 78% 41%),
+      hsl(200 75% 35%)
+    );
+    --gradient-card: linear-gradient(145deg, hsl(217 38% 11%), hsl(217 40% 7%));
+
+    /* Shadows */
+    --shadow-gold: 0 0 30px hsl(42 90% 52% / 0.15);
+    --shadow-blue: 0 0 40px hsl(188 78% 41% / 0.2);
+    --shadow-card: 0 8px 32px hsl(217 40% 3% / 0.6);
+
+    /* Sidebar (unused but required) */
+    --sidebar-background: 217 40% 6%;
+    --sidebar-foreground: 210 30% 94%;
+    --sidebar-primary: 217 59% 29%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 35% 14%;
+    --sidebar-accent-foreground: 210 30% 94%;
+    --sidebar-border: 217 30% 17%;
+    --sidebar-ring: 188 78% 41%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    background: hsl(var(--background));
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .text-electric {
+    color: hsl(var(--electric));
+  }
+
+  .bg-gold {
+    background: hsl(var(--gold));
+  }
+
+  .bg-navy-surface {
+    background: hsl(var(--navy-surface));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+
+  .border-electric {
+    border-color: hsl(var(--electric));
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-gold-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-blue-text {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-blue {
+    box-shadow: var(--shadow-blue);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-gold {
+    box-shadow:
+      0 0 20px hsl(var(--gold) / 0.4),
+      0 0 60px hsl(var(--gold) / 0.15);
+  }
+
+  .glow-blue {
+    box-shadow:
+      0 0 20px hsl(var(--electric) / 0.4),
+      0 0 60px hsl(var(--electric) / 0.15);
+  }
+
+  .circuit-pattern {
+    background-image:
+      linear-gradient(hsl(var(--electric) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--electric) / 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.7s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+
+  .card-hover {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px hsl(var(--electric) / 0.15);
+    border-color: hsl(var(--electric) / 0.4);
+  }
+
+  .gold-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px hsl(var(--gold) / 0.15);
+    border-color: hsl(var(--gold) / 0.4);
+  }
+
+  .nav-link {
+    position: relative;
+    color: hsl(var(--foreground) / 0.75);
+    transition: color 0.2s;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: hsl(var(--gold));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--gold));
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseSlow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes floatDot {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}

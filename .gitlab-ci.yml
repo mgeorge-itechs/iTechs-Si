@@ -1,0 +1,32 @@
+stages:
+  - build
+  
+
+build_for_amplify:
+  stage: build
+  # Use an official Node.js image to run your npm commands
+  image: node:latest
+  before_script:
+    # The Node image uses Debian; we must install zip via apt-get
+    - apt-get update -y && apt-get install -y zip
+  script:
+    - echo "1. Installing dependencies..."
+    - npm install
+    
+    - echo "2. Compiling the project..."
+    - npm run build
+    
+    - echo "3. Packaging the artifact..."
+    # Navigate INTO the output folder to ensure index.html is at the root of the zip
+    - cd dist
+    - zip -r ../deploy.zip .
+    - cd ..
+  artifacts:
+    # Expose the zip file so you can download it directly from GitLab
+    paths:
+      - deploy.zip
+    expire_in: 1 week
+  tags:
+    - dev
+  only:
+    - dev
