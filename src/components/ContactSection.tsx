@@ -10,8 +10,8 @@ import { solutions } from "@/data/solutions";
 // 3. Paste your key below or set VITE_WEB3FORMS_ACCESS_KEY in .env
 const WEB3FORMS_ACCESS_KEY =
   import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
-  "44a8080d-345d-4bf9-adca-68a443aacf09";
-const RECIPIENT_EMAIL = "m.george@itechs-group.com";
+  "ff616af7-0c94-4a97-8886-0fde996693c0";
+const RECIPIENT_EMAIL = "info@itechs-group.com";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({

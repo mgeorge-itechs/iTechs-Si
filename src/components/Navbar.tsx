@@ -23,21 +23,22 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
           ? "bg-navy-deep/95 backdrop-blur-md border-b border-border shadow-card"
           : "bg-transparent"
-        }`}
+      }`}
     >
       <nav className="container mx-auto flex items-center justify-between h-18 py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="relative w-9 h-9 flex items-center justify-center">
-            <img src="/si-sign-light.svg" alt="Logo" />
+          <div className="relative w-32 h-auto flex items-center justify-center">
+            <img src="/si-brand.png" alt="Logo" />
           </div>
           <div className="leading-none">
-            <span className="font-display font-semibold text-foreground text-lg tracking-tight">
+            {/* <span className="font-display font-semibold text-foreground text-lg tracking-tight">
               iTechs
-            </span>
+            </span> */}
             {/* <span className="font-display font-semibold text-gold text-lg tracking-tight ml-[4px]">
               SI
             </span> */}
